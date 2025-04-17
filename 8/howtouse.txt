@@ -1,0 +1,7 @@
+sudo apt install flex
+sudo apt install bison (or) bison++
+
+lex cal.l
+yacc -d cal.y
+gcc y.tab.c lex.yy.c -o calc -lm
+./calc
