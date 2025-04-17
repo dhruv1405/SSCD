@@ -1,0 +1,6 @@
+sudo apt install flex
+sudo apt install bison++
+
+lex ass5.l
+gcc lex.yy.c
+./a.out
