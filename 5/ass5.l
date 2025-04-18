@@ -23,8 +23,8 @@ else |
 goto {printf("\n\t%s is a keyword",yytext);}
 "/*" {COMMENT=1;}{printf("\n\t %s is a COMMENT",yytext);}
 {identifier}\( {if(!COMMENT)printf("\nFUNCTION \n\t%s",yytext);}
-\{  {if(!COMMENT)printf("\n BLOCK BEGINS");}
-\}  {if(!COMMENT)printf("BLOCK ENDS ");}
+\{ {if(!COMMENT)printf("\n BLOCK BEGINS");}
+\} {if(!COMMENT)printf("BLOCK ENDS ");}
 {identifier}(\[[0-9]*\])? {if(!COMMENT) printf("\n %s IDENTIFIER",yytext);}
 \".*\" {if(!COMMENT)printf("\n\t %s is a STRING",yytext);}
 [0-9]+ {if(!COMMENT) printf("\n %s is a NUMBER ",yytext);}
